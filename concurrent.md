@@ -40,11 +40,21 @@ class UnsafeStates{
 
 volatile类型修饰一个引用值时，其他线程会看到最新的引用地址(指出一种应用场景)。
 
-#### 不变性
+##### 不变性
 
 - 对象创建后状态不可修改
 - 对象的所有域都是final类型
 - 对象都是正确创建的（在创建对象时，this引用没有逸出）
+
+#### Synchronize锁
+
+上面讲到锁的四种状态：无锁状态，偏向锁状态，轻量级锁状态和重量级锁状态
+
+(1) 锁的升级
+
+
+
+
 
 
 
@@ -87,7 +97,7 @@ Java5中引入Lock接口，3个实现的类：ReentrantLock、ReetrantReadWriteL
 ```java
 Lock lock = new ReentrantLock();
 ......
-Lock.lock();
+lock.lock();
 try{
      //更新对象的状态
      //捕获异常，必要时恢复到原来的不变约束
@@ -97,7 +107,9 @@ try{
 }
 ```
 
-​       在JDK5中，synchronized性能低，吞吐量低，刮起线程和恢复线程的操作都需要转入内核态中完成的，一个重量级锁。但 在jdk1.6中，对synchronize加入了很多优化措施，有自适应自旋，锁消除，锁粗化，轻量级锁，偏向锁等。ReentrantLock使用了CAS操作。 
+​       在JDK5中，synchronized性能低，吞吐量低，刮起线程和恢复线程的操作都需要转入内核态中完成的，一个重量级锁。但 在jdk1.6中，对synchronize加入了很多优化措施，有自适应自旋，锁消除，锁粗化，轻量级锁，偏向锁等。ReentrantLock使用了CAS操作。
+
+​	**中断是一种协作机制，一个线程不能强制其他线程正在执行的操作而去执行其他的操作，** 
 
 ​        如果某一线程A正在执行锁中的代码，另一线程B正在等待获取该锁，对线程B进行中断，如果是忽略终端锁：则不理会该中断，线程B继续等待，如果是响应式中断锁，便会处理终端，B线程会放弃等待处理其他事情，ReentrantLock获得响应中断锁的一般形式如下 
 
@@ -113,4 +125,14 @@ try {
     lock.unlock();        //锁必须在finally块中释放
 }
 ```
+
+#### AQS
+
+AQS(AbstractQueuedSynchronized类)基于FIFO队列的等待模式实现构建锁和同步工具，其实现类主要用ReentrantLock,StamphedLock,ReentrantReadWriteLock,CountDownLatch等，支持独占和分享这两种模式，一般来说，实现继承类只能选择其中一种模式，但是两者都可以实现例如[ReadWriteLock](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReadWriteLock.html)，
+
+##### 1.CountDownLatch
+
+
+
+
 
