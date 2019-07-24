@@ -10,10 +10,9 @@ _@Configuration_在Spring中表示为一个提供给Spring上下文的 一个配
 
 - _@EnableAutoConfiguration_
 
-- 
+- _@ComponentScan_ 
 
-  - @EnableAutoConfiguration 
 
 ##### devtools
 
-在JVM中，两个独立的类加载器来加载程序，一个class loader加载src/main/路径下的大部分文件，java 代码和propertise文件，另一个class loader加载一些依赖库，这部分代码不会经常被更改
+在JVM中，两个独立的类加载器来加载程序，一个class loader加载src/main/路径下的大部分文件，java 代码和propertise文件，另一个class loader加载一些依赖库，这部分代码不会经常被更改。
