@@ -3,7 +3,7 @@
 2. regex
 
    - **?**  一个字符
-   - ***** match 0或多个字符
+   - **\*** match 0或多个字符
    - [A-z]*.class
 
 3. Ctrl+d，不仅适用于以下的sort命令，也适用于wc等其他命令
@@ -26,4 +26,50 @@
 
    command > out &   //运行该命令之后，会打印出两个参数，第一个参数 任务命令数字 第二个是PID
 
-6. 
+6. Unix 系统从程序一般都在硬盘，只有当执行时才会进入内存中
+
+7. sed命令
+
+   正则表达式  */
+
+8. 定义变量，不允许 = 两边有空格；没有数据类型之分；
+
+9. 算数运算 $((3*4));$((8#100)) 八进制
+
+10. grep 命令可跟单引号 grep ‘we are’ filename
+
+11. single quotes tell the shell to ignore *all* enclosed characters, double quotes say to ignore *most*,有三个在双引号里不会被忽略的符号： ¥  ` /
+
+12. \$0 代表运行文件的路径名eg： ./var3.sh  \$0 的值为 ./var3.sh  ；if run /home/cl/var3.sh  the result is $/home/cl/var3.sh$
+
+13. *$#*参数的个数，*$\** 全部参数，*$$*获取当前线程，$?获取上一条命令执行的返回状态
+
+14. 参数需要传入*"susan T"*,类似于这种匹配的，可以脚本引用参数鞋厂*"$1"*即可
+
+15. 判断if
+
+    ```shell
+    if commandt
+    then
+    command
+    command
+    ...
+    fi
+    ```
+
+    当commandt被执行完成，该命令的退出状态(_Whenever any program completes execution, it returns an exit status code to the shell_)为**零**，位于_then_和_if_中间的命令将会被执行。
+
+16. ### test 
+
+    - 测试两个值是否相等，*test $count = 1*,**等号两边有空格**
+
+    - 取反，**！**
+
+    - 与表达式：expr1 -a expr2
+
+    - 或表达式：expr1 -o expr2
+
+    - 判断一个变量是否为null，*test "$day"*返回true则不是null，返回false是null
+
+      ![](/Users/cl/Pictures/testDoubleQuotes.png)
+
