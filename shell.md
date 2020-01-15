@@ -73,3 +73,42 @@
 
       ![](/Users/cl/Pictures/testDoubleQuotes.png)
 
+In the first case, test was not passed any arguments because the shell ate up the four spaces in
+
+blanks. In the second case, test got one argument consisting of four space characters which is
+
+not null.
+
+17. 数字比较
+    - int1 -eq int2 是否等于
+    - int1 -ge int2 是否大于等
+    - int1 -gt int2 大于
+    - int1 -le int2 小于等于
+    - int1 -lt int2 小于
+    - int1 -ne int2 不等于
+
+18. 文件判断操作符
+
+    ![](/Users/cl/Pictures/FileOperator.png)
+
+19. if else 语法
+
+    ```shell
+    if command
+    then
+    	command
+    	command
+    else
+    	command
+    	command
+    ...
+    fi
+    ```
+
+20. 退出
+
+    exit 1   #失败退出
+
+21. case语法结构
+
+    ![](/Users/cl/Pictures/case.png)
