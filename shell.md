@@ -89,7 +89,7 @@ not null.
 
 18. 文件判断操作符
 
-    ![](/Users/cl/Pictures/FileOperator.png)
+    ![test](https://github.com/GroundLand/note/blob/master/image/FileOperator.png?raw=true)
 
 19. if else 语法
 
@@ -111,4 +111,7 @@ not null.
 
 21. case语法结构
 
-    ![](/Users/cl/Pictures/case.png)
+    如果符合其中一个分支时，则紧跟其后的命令将会被执行，**直到遇到 双分号(double semicolons)**
+
+    ![case](https://github.com/GroundLand/note/blob/master/image/case.png?raw=true)
+
