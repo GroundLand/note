@@ -115,3 +115,40 @@ not null.
 
     ![case](https://github.com/GroundLand/note/blob/master/image/case.png?raw=true)
 
+22. 双括号
+
+    ![](/Users/cl/Pictures/doubleBracket.png)
+
+Eg:
+
+```bash
+#!/bin/bash
+# using double parenthesis #
+val1=10
+#
+if (( $val1 ** 2 > 90 )) then
+       (( val2 = $val1 ** 2 ))
+       echo "The square of $val1 is $val2"
+    fi
+
+```
+
+
+
+23. read从文件中读取
+
+    ```bash
+    #!/bin/bash
+    # reading data from a file #
+    count=1
+    cat test | while read line do
+       echo "Line $count: $line"
+       count=$[ $count + 1]
+    done
+    echo "Finished processing the file"
+    ```
+
+    while循环会持续通过read命令处理文件中的行，直到read命令以非零退出状态码退出
+
+
+
