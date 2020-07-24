@@ -152,3 +152,15 @@ if (( $val1 ** 2 > 90 )) then
 
 
 
+24. 标准文件描述符
+
+    ![](/Users/cl/Pictures/standFileDesc.png)
+
+25. 文件信号
+
+    ![](/Users/cl/Documents/note/image/linux_signal.png)
+
+
+
+
+
