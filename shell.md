@@ -89,7 +89,7 @@ not null.
 
 18. 文件判断操作符
 
-    ![test](https://github.com/GroundLand/note/blob/master/image/FileOperator.png?raw=true)
+    ![test](/Users/cl/Documents/note/image/FileOperator.png)
 
 19. if else 语法
 
