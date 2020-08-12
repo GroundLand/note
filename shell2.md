@@ -60,7 +60,7 @@ func1
 echo "The result is $result" 9 if [ $temp -gt $value ]
 then
 echo "temp is larger"
-else 10
+else 10s
    echo "temp is smaller"
 fi
 ```
@@ -69,6 +69,47 @@ fi
 
 局部变量
 
-在函数内部使用local 修饰符关键字
+在函数内部使用**local** 修饰符关键字
+
+
+
+引用函数库
+
+shell脚本里面
+
+```bash
+. ./funcs.sh
+```
+
+命令行
+
+1. 当在命令行上定义函数时，你必须记得在每个命令后面加个分号，这样shell就能知道在哪里 是命令的起止了
+
+```shell
+$ functiondivem{echo$[$1/$2]; } 
+$ divem 100 5
+20
+```
+
+2. 采用多行方式来定义函数
+
+```shell
+$ function multem { 
+> echo $[ $1 * $2 ] 
+> }
+$ multem 2 5
+10 
+$
+```
+
+在命令行上创建函数要小心。因为创建的函数名与内建命令重名，函数将会覆盖原来的命令
+
+
+
+
+
+
+
+
 
  
